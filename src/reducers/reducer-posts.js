@@ -1,4 +1,4 @@
-import {FETCH_POSTS} from '../actions/index.js';
+import {FETCH_POSTS, FETCH_POST} from '../actions/index.js';
 
 const INITIAL_STATE = {
 	all: [],
@@ -11,7 +11,12 @@ export default (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				all: action.payload.data
-			}
+			};
+		case FETCH_POST:
+			return {
+				...state,
+				post: action.payload.data
+			};
 		default:
 			return state;
 	}
